@@ -172,18 +172,6 @@ for(sampleN in 1:1){
     }
     
     
-    randindex_1=rep(0,nburn.in)
-    for(i in 1:nburn.in){
-      
-      g1<-save.result$z[i,]
-      g2<-save.result$z[min,]
-      randindex_1[i]=rand.index(g1,g2)
-      
-    }
-    randindex=subset(randindex_1,randindex_1>0)
-    rand_index=as.data.frame(randindex)
-    ggplot(rand_index,aes(y=randindex))+geom_boxplot()
-    
     
     
     #LPML
@@ -220,14 +208,6 @@ for(sampleN in 1:1){
 
 
 
-for(i in 1:1){
-  for(sampleN in 1:100){
-    RD[sampleN]<-rand.index(Group2[i,],Group2[sampleN,])
-  }  
-  cat(mean(RD[1:100]),"\n")
-}
-Group2[2,]
-RD
 
 
 cbPalette <- c( "#56B4E9", "#009E73", "#E69F00","#F0E442",
